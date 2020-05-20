@@ -50,3 +50,32 @@
     margin-left: -40px;
     position: fixed;
     padding-top: 10px; }
+
+.results {
+  margin: 30px 0;
+  text-align: center; }
+  .results #block {
+    display: flex;
+    justify-content: center; }
+  .results .first-row {
+    display: flex;
+    justify-content: center; }
+    .results .first-row .name {
+      width: 300px;
+      height: 50px;
+      margin: 30px 10px; }
+    .results .first-row .value {
+      width: 300px;
+      height: 50px;
+      margin: 30px 10px; }
+  .results .second-row {
+    display: flex;
+    justify-content: center; }
+    .results .second-row .data {
+      width: 300px;
+      height: 50px;
+      margin: 30px 10px; }
+    .results .second-row .deliver {
+      width: 300px;
+      margin: 30px 10px;
+      height: 50px; }
