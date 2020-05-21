@@ -5,13 +5,13 @@ const htmlmin = require('gulp-htmlmin');
 let rename = require("gulp-rename");
 let uglify = require('gulp-uglify-es').default;
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp.src('./sass/*.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   gulp.src('./css/*.css')
     .pipe(uglifycss({
       "uglyComments": true
@@ -25,7 +25,7 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('uglify.script', function () {
+gulp.task('uglify.script', () => {
     return gulp.src("./script.js")
         .pipe(rename("script.min.js"))
         .pipe(uglify(/* options */))
@@ -34,7 +34,7 @@ gulp.task('uglify.script', function () {
 
 gulp.task('run', ['sass', 'css', 'html', 'uglify.script']);
 
-gulp.task('watch', function(){
+gulp.task('watch', () => {
 	gulp.watch('./sass/*.sass', ['sass'])
 	gulp.watch('./css/*.css', ['css'])
   gulp.watch('./*.html', ['html'])
