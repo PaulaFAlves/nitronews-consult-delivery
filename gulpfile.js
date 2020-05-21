@@ -1,6 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const uglifycss = require('gulp-uglifycss');
+const htmlmin = require('gulp-htmlmin');
+let rename = require("gulp-rename");
+let uglify = require('gulp-uglify-es').default;
 
 gulp.task('sass', function () {
   return gulp.src('./sass/*.sass')
@@ -16,11 +19,26 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('run', ['sass', 'css']);
+gulp.task('html', () => {
+  return gulp.src('./*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('uglify.script', function () {
+    return gulp.src("./script.js")
+        .pipe(rename("script.min.js"))
+        .pipe(uglify(/* options */))
+        .pipe(gulp.dest("./dist/"));
+});
+
+gulp.task('run', ['sass', 'css', 'html', 'uglify.script']);
 
 gulp.task('watch', function(){
 	gulp.watch('./sass/*.sass', ['sass'])
 	gulp.watch('./css/*.css', ['css'])
+  gulp.watch('./*.html', ['html'])
+  gulp.watch('./*.js', ['uglify.script'])
 });
 
 gulp.task('default', ['run', 'watch']);

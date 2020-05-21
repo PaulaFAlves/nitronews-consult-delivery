@@ -14,25 +14,25 @@ searchButton.addEventListener('click', (e) => {
     	})
     	if (dados.length !== 0){
 			const name = document.getElementById('name');
-			const textHidden01 = document.querySelector('.text-hidden-01');
+			const textHidden01 = document.getElementById('text-hidden-01');
 			name.innerHTML = dados[0].cliente['nome'];
 			textHidden01.innerHTML = 'Nome do Cliente';
 			const valor = document.getElementById('valor');
-			const textHidden02 = document.querySelector('.text-hidden-02');
+			const textHidden02 = document.getElementById('text-hidden-02');
 			valor.innerHTML = 'R$ ' + dados[0].valor;
 			textHidden02.innerHTML = 'Valor do pedido';
 			const data = document.getElementById('data');
 			let dataconverter = dados[0].data;
 			dataconverter = dataconverter.slice(8,10) + '/' + dataconverter.slice(5,7) + '/' + dataconverter.slice(0,4)
-			const textHidden03 = document.querySelector('.text-hidden-03');
+			const textHidden03 = document.getElementById('text-hidden-03');
 			data.innerHTML = dataconverter;
 			textHidden03.innerHTML = 'Data de Entrega'
-			const textHidden04 = document.querySelector('.text-hidden-04');
+			const textHidden04 = document.getElementById('text-hidden-04');
 			textHidden04.innerHTML = 'Situação da Entrega'
 			if (dados[0].entregue == true)
-				entregue.innerHTML = 'Encomenda entregue';
+				entregue.innerHTML = 'Entregue';
 			else
-				entregue.innerHTML = 'Encomenda não entregue';
+				entregue.innerHTML = 'Entregar ';
     	} else {
     		const results = document.getElementById('results');
     		results.classList.add('notFoundMessage');

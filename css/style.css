@@ -27,7 +27,7 @@
 .results {
   margin: 30px 0;
   text-align: center; }
-  .results #block {
+  .results .block {
     display: flex;
     justify-content: center;
     color: #1E90FF;
@@ -38,32 +38,32 @@
     display: flex;
     justify-content: center; }
     .results .first-row .name {
-      width: 300px;
+      color: #1C86EE;
       height: 50px;
       margin: 30px 10px;
-      color: #1C86EE;
-      font-weight: bold; }
+      font-weight: bold;
+      width: 300px; }
     .results .first-row .value {
-      width: 300px;
-      height: 50px;
-      margin: 30px 10px;
       color: #1C86EE;
-      font-weight: bold; }
+      height: 50px;
+      font-weight: bold;
+      margin: 30px 10px;
+      width: 300px; }
   .results .second-row {
     display: flex;
     justify-content: center; }
     .results .second-row .data {
-      width: 300px;
-      height: 50px;
-      margin: 30px 10px;
       color: #1C86EE;
-      font-weight: bold; }
+      height: 50px;
+      font-weight: bold;
+      margin: 30px 10px;
+      width: 300px; }
     .results .second-row .deliver {
-      width: 300px;
-      margin: 30px 10px;
-      height: 50px;
       color: #1C86EE;
-      font-weight: bold; }
+      height: 50px;
+      font-weight: bold;
+      margin: 30px 10px;
+      width: 300px; }
 
 .header {
   display: flex;
