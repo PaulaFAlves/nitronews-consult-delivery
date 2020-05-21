@@ -5,23 +5,14 @@ const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', (e) => {
 	e.preventDefault;
 	const searchId = searchText.value
-	// console.log(searchId)
 	fetch("http://localhost:3000")
     .then(response => response.json())
     .then(data => {
     	const info = data.encomendas
-    	// console.log(info)
     	const dados = info.filter((item) => {
     		return (item.id == searchId)
     	})
-    	// console.log(dados)
     	if (dados.length !== 0){
-    		console.log(dados)
-    		
-    		
-    		
-    		
-    		// textHidden01.style.visibility = 'visible'
 			const name = document.getElementById('name');
 			const textHidden01 = document.querySelector('.text-hidden-01');
 			name.innerHTML = dados[0].cliente['nome'];
@@ -31,8 +22,10 @@ searchButton.addEventListener('click', (e) => {
 			valor.innerHTML = 'R$ ' + dados[0].valor;
 			textHidden02.innerHTML = 'Valor do pedido';
 			const data = document.getElementById('data');
+			let dataconverter = dados[0].data;
+			dataconverter = dataconverter.slice(8,10) + '/' + dataconverter.slice(5,7) + '/' + dataconverter.slice(0,4)
 			const textHidden03 = document.querySelector('.text-hidden-03');
-			data.innerHTML = dados[0].data;
+			data.innerHTML = dataconverter;
 			textHidden03.innerHTML = 'Data de Entrega'
 			const textHidden04 = document.querySelector('.text-hidden-04');
 			textHidden04.innerHTML = 'Situação da Entrega'
@@ -42,13 +35,17 @@ searchButton.addEventListener('click', (e) => {
 				entregue.innerHTML = 'Encomenda não entregue';
     	} else {
     		const results = document.getElementById('results');
-    		results.innerHTML = "<p style='margin-top: 100px; color: red'>Encomenda não encontrada<br />Procure novamente</p>"	
+    		results.classList.add('notFoundMessage');
+    		results.innerHTML = "<p>Encomenda não encontrada!<br />Procure novamente</p>"	
     	}
-		searchText.addEventListener('click', () => {
+		searchText.addEventListener('click', (e) => {
+			e.preventDefault;
 			searchText.value = '';
 			location.reload()
 		})
-  
     })
+})
+searchText.addEventListener('click', () => {
+	searchText.value = '';
 })
 
