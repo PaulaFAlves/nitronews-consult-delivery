@@ -28,7 +28,6 @@ gulp.task('html', () => {
 gulp.task('uglify.script', () => {
     return gulp.src("./script.js")
         .pipe(rename("script.min.js"))
-        .pipe(uglify(/* options */))
         .pipe(gulp.dest("./dist/"));
 });
 

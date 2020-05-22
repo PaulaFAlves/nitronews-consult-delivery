@@ -1,30 +1,43 @@
-## Application for delivery consultation
+## Desenvolvimento de aplicacão para consulta de entregas
 
-In this project, we can check if a delivery was completed or not. The search is made with the Delivery Id. With this number, we can see the client's name, the value of the purchase, the data and the situation of the delivery. In case a wrong Id is provided, a error message is shown. 
-Bellow, we can see the screens and the information about how how to work with this project.
+Neste projeto, podemos consultar a situação de entregas, se finalizadas ou não. Para consultar, é necessário informar o código da entrega. Caso haja alguma entrega cadastrada com o ID informado, são mostradas na tela informações sobre a mesma. Caso seja informado um código errado, é apresentada mensagem de erro.
 
-Main web screen:
+Abaixo estão as telas da aplicação, em ordem: 
+1. tela web principal 
+2. tela web em caso de sucesso
+3. tela web em caso de erro
+4. tela mobile principal
+5. tela mobile sucesso
+6. tela mobilo erro
+
 ![Getting Started](./screens/tela-web-principal.png)
-Web screen with sucess:
+
 ![Getting Started](./screens/tela-web-consulta-sucesso.png)
-Web screen with error:
+
 ![Getting Started](./screens/tela-web-consulta-erro.png)
-Main screen for mobile:
+
 ![Getting Started](./screens/tela-mobile-principal.png)
-Mobile screen with success:
+
 ![Getting Started](./screens/tela-mobile-consulta-sucesso.png)
-Mobile screen with error:
+
 ![Getting Started](./screens/tela-mobile-consulta-erro.png)
 
 
-## How to run this project
+## Como trabalhar como este projeto:
 
-**Developement Environment**
+**Ambiente de desenvolvimento**
 
-- clone the project
-- npm install - to install the dependencies.
-- node server.js to start server 
+- Clonar o projeto
+- rodar **npm install** para instalar as dependências do projetor.
+- rodar **node server.js** para iniciar o servidor.
 
-**Production Environment**
+**Ambiente de produção**
 
-- gulp - to automate tasks and prepare the production environment
+Para automatizar o ambiente produção, foi utilizado GULP, que cria e prepara os arquivos para produção.
+Rodar **gulp** para iniciar.
+
+_Esta aplicação foi desenvolvida com as seguintes ferramentas:_
+- Express.js 
+- SASS 
+- Gulp 
+

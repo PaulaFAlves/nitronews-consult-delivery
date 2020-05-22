@@ -1,7 +1,6 @@
 const searchText = document.querySelector('.search-text');
 const searchButton = document.querySelector('.search-button');
 
-
 searchButton.addEventListener('click', (e) => {
 	e.preventDefault;
 	const searchId = searchText.value
